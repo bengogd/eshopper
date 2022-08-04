@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Post a Product{% endblock %}
+
+{% block content %}
+  <h1>Create product</h1>
+  <p>Please, fill up the following form:</p>
+  <form action="{% url 'create-product' %}" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Create product"></p>
+  </form>
+{% endblock %}
